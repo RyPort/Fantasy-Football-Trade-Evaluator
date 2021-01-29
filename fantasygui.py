@@ -1,4 +1,4 @@
-from espn_api.football import League
+from espn_api.football import League, Team
 from tkinter import ttk
 from tkinter import *
 
@@ -12,20 +12,59 @@ my_swid = keys.readline()
 my_swid = my_swid[0:-1]
 my_s2 = keys.readline()
 
-print(id)
-print(my_swid)
-print(my_s2)
 
 
 league = League(league_id=id,year=year,swid=my_swid,espn_s2=my_s2)
 
-actions = league.recent_activity(50,"TRADED")
-for x in actions:
-    print(x)
-    print("\n")
+activity = league.recent_activity(50,"TRADED")
+i = 0
+#print(activity[0].actions[0][0].team_name)
 
-team1 = None
-team2 = None
+for x in activity:
+    team1 = None
+    team2 = None
+    team1_roster = []
+    team2_roster = []
+    y = 0
+    while y < len(x.actions[])
+        if team1 == None:
+            team1 = y
+        if team1 != None and team1 != y and team2 == None:
+            team2 = y
+        if x.actions[i][y] == team1:
+            y = y
+            team1_roster.append(x.actions[i][y+2])
+
+
+    print(x)
+    print(i, end="")
+    print(". ")
+    print("Team 1: ",end="")
+    print(x.actions[i][0].team_name)
+    print("Traded: ",end="")
+    j = 2
+    while j < len(x.actions[i]):
+        print(x.actions[i][j])
+        if(isinstance(x.actions[i][j],Team)):
+            print("")
+            print("Team2: ",end="")
+            print(x.actions[i][j].team_name)
+            print("Traded: ",end="")
+        else:
+            print(x.actions[i][j].name, end="")
+            print(", ",end="")
+        j = j+1
+
+
+            
+
+    i=i+1
+    print("")
+    
+
+    
+
+
 i = 1
 """
 for x in league.teams:
