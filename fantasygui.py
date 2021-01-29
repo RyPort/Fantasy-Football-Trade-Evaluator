@@ -4,11 +4,30 @@ from tkinter import *
 
 id = 374100
 year = 2020
-league = League(league_id=id,year=year,swid="{E3ED957C-6A4E-4F78-B94B-465E9D885563}",espn_s2="AEAeTVHJx6ryMDMAUly4pkh9IC2dQqYR%2FnebCuQdaSmCFiMAbfNk0og14KceNh7BI6%2B4O4X98t6qM0fsZpQsYJIrUS5UutZUWhPOsQU1fDz17eC7BS8IvZ9FDAbfyAiqtcRJFzsIy4ucsjA%2BC2Q7FA2zh09Hik14Ihafb4%2FYEE%2ByiBE2Hc%2FUgGnk7Ewc9XOmvife1zhqaH6eXSCGFideIlSywWSkjvVrneyBQyCkTtDRDUS0k%2BFrTamr3TncP6HfM%2Fa%2BEbqrMiC7CTwCeCNpCoI1")
+keys = open("keys.txt","r")
+id = keys.readline()
+id = id[0:-1]
+id = int(id)
+my_swid = keys.readline()
+my_swid = my_swid[0:-1]
+my_s2 = keys.readline()
+
+print(id)
+print(my_swid)
+print(my_s2)
+
+
+league = League(league_id=id,year=year,swid=my_swid,espn_s2=my_s2)
+
+actions = league.recent_activity(50,"TRADED")
+for x in actions:
+    print(x)
+    print("\n")
 
 team1 = None
 team2 = None
 i = 1
+"""
 for x in league.teams:
     print(i, end='')
     print(". ", end='')
@@ -63,11 +82,13 @@ endweek = int(input("Enter the final week of the season: "))
 
 matchup1 = None
 matchup2 = None
-for i in range(startweek,endweek):
+
+"""
+"""for i in range(startweek,endweek):
     box_scores = league.box_scores(i)
     for x in box_scores:
         if(x.home_team == team1)
-
+"""
 """
 for i in range(startWeek, endWeek):
     box_scores = league.box_scores(i)

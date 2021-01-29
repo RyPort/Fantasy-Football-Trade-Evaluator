@@ -2,7 +2,6 @@ from espn_api.football import League
 
 id = 374100
 year = 2020
-league = League(league_id=id,year=year,swid="{E3ED957C-6A4E-4F78-B94B-465E9D885563}",espn_s2="AEAeTVHJx6ryMDMAUly4pkh9IC2dQqYR%2FnebCuQdaSmCFiMAbfNk0og14KceNh7BI6%2B4O4X98t6qM0fsZpQsYJIrUS5UutZUWhPOsQU1fDz17eC7BS8IvZ9FDAbfyAiqtcRJFzsIy4ucsjA%2BC2Q7FA2zh09Hik14Ihafb4%2FYEE%2ByiBE2Hc%2FUgGnk7Ewc9XOmvife1zhqaH6eXSCGFideIlSywWSkjvVrneyBQyCkTtDRDUS0k%2BFrTamr3TncP6HfM%2Fa%2BEbqrMiC7CTwCeCNpCoI1")
 #print(league.teams)
 beat = league.teams[4]
 herb = league.teams[3]
