@@ -5,11 +5,11 @@ id = 374100
 year = 2020
 #print(league.teams)
 keys = open("keys.txt","r")
-
+my_id = int(keys.readline())
 my_swid = keys.readline()
 my_swid = my_swid[0:-1]
 my_s2 = keys.readline()
-league = League(league_id=id,year=year,swid=my_swid,espn_s2=my_s2)
+league = League(league_id=my_id,year=year,swid=my_swid,espn_s2=my_s2)
 act = league.recent_activity(25,'TRADED')
 
 # players that team1 and team2 traded away respectively
